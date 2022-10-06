@@ -1,6 +1,6 @@
-import styles from './tasks.module.css';
+import styles from './tasksAlerts.module.css';
 
-export function Tasks(){
+export function TasksAlerts(){
     return(
         <div className={styles.tasks}>
             <header className={styles.header}>

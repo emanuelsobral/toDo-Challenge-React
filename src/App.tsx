@@ -1,12 +1,12 @@
 import { Header } from "./components/header";
-import {Tasks} from "./components/tasks";
+import {TasksAlerts} from "./components/tasksAlerts";
 
 
 function App() {
   return (
     <div>
       <Header />
-      <Tasks />
+      <TasksAlerts />
     </div>
   )
 }
