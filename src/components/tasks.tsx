@@ -1,8 +1,9 @@
-import styles from './tasksAlerts.module.css';
+import { Task } from './task';
+import styles from './tasks.module.css';
 
 export function TasksAlerts(){
     return(
-        <div className={styles.tasks}>
+        <div className={styles.tasks}>  {/*Task alerts group*/}
             <header className={styles.header}>
 
                 <div>
@@ -16,6 +17,11 @@ export function TasksAlerts(){
                 </div>
 
             </header>
+            <div> 
+                <Task />
+            </div>
+
+
         </div>
     )
 }

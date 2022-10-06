@@ -1,5 +1,5 @@
 import { Header } from "./components/header";
-import {TasksAlerts} from "./components/tasksAlerts";
+import {TasksAlerts} from "./components/tasks";
 
 
 function App() {
