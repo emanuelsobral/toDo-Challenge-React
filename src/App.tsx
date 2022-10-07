@@ -9,18 +9,7 @@ export interface toMake{
 }
 
 function App() {
-  const [tasks, setTasks] = useState<toMake[]> ([
-    {
-    id: 'teste',
-    content: 'teste',
-    isDone: true,
-  },
-  {
-    id: 'teste',
-    content: 'teste',
-    isDone: false,
-  }
-  ]);
+  const [tasks, setTasks] = useState<toMake[]> ([]);
 
   function addTasks(taskContent: string) {
     setTasks([
@@ -38,10 +27,23 @@ function App() {
     setTasks(newTask);
   }
 
+  function completeTaskButton(taskId:string) {
+    const newTask = tasks.map((task) => {
+      if(task.id === taskId) {
+        return{
+          ...task,
+          isDone: !task.isDone,
+        };
+      }
+      return task;
+    });
+    setTasks(newTask);
+  }
+
   return (
     <div>
       <Header onAddTask={addTasks}/>
-      <TasksAlerts tasks={tasks} onDelete={deleteTask} />
+      <TasksAlerts tasks={tasks} onDelete={deleteTask} onComplete={completeTaskButton}/>
     </div>
   )
 }

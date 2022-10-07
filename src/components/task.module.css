@@ -19,7 +19,23 @@
 .checkClick{
     background: none;
     border: none;
-    color: var(--purple);
+    color: var(--purple-dark);
+}
+
+.checkCircle{
+    background: var(--purple-dark);
+    color: var(--gray-100);
+    width: 100%;
+    outline: none;
+    border-radius: 99999px;
+}
+
+.checkCircle:hover{
+    background: var(--purple);
+}
+
+.textCompleted{
+    text-decoration: line-through;
 }
 
 .trash {
