@@ -17,7 +17,11 @@ export function TasksAlerts(){
                 </div>
 
             </header>
-            <div> 
+
+            <div className={styles.list}> {/*tasks*/}
+                <Task />
+                <Task />
+                <Task />
                 <Task />
             </div>
 
