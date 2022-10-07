@@ -1,28 +1,35 @@
+import { toMake } from '../App';
 import { Task } from './task';
 import styles from './tasks.module.css';
 
-export function TasksAlerts(){
+interface props{
+    tasks: toMake[];
+}
+
+export function TasksAlerts({tasks}: props){
+    const taskQuantity = tasks.length;
+    const completedTask = tasks.filter(task => task.isDone).length;
+
+
     return(
         <div className={styles.tasks}>  {/*Task alerts group*/}
             <header className={styles.header}>
 
                 <div>
                     <strong>Tarefas Criadas</strong>
-                    <span>10</span>
+                    <span>{taskQuantity}</span>
                 </div>
 
                 <div>
                     <strong className={styles.textPurple}>Tarefas FInalizadas</strong>
-                    <span>06 de 10</span>    
+                    <span>{completedTask} de {taskQuantity}</span>    
                 </div>
 
             </header>
 
             <div className={styles.list}> {/*tasks*/}
-                <Task />
-                <Task />
-                <Task />
-                <Task />
+                {tasks.map((task) =><Task key={task.id} task={task} />)}
+
             </div>
 
 
