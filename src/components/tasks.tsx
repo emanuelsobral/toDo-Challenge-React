@@ -4,9 +4,10 @@ import styles from './tasks.module.css';
 
 interface props{
     tasks: toMake[];
+    onDelete: (taskId:string) => void;
 }
 
-export function TasksAlerts({tasks}: props){
+export function TasksAlerts({tasks, onDelete}: props){
     const taskQuantity = tasks.length;
     const completedTask = tasks.filter(task => task.isDone).length;
 
@@ -28,7 +29,7 @@ export function TasksAlerts({tasks}: props){
             </header>
 
             <div className={styles.list}> {/*tasks*/}
-                {tasks.map((task) =><Task key={task.id} task={task} />)}
+                {tasks.map((task) =><Task key={task.id} task={task} onDelete={onDelete}/>)}
 
             </div>
 
